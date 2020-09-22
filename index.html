@@ -7,6 +7,15 @@
             </title>
             <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGL_JS04.json", {onProgress: UnityProgress});
+      // unitywebGL
+      var testObject ={name:'albert', age: 55}
+      var jsonString = JSON.stringify(testObject);
+      // unity webGL
+    </script>
     </head>
     <body>
         
@@ -89,6 +98,53 @@
       };
       document.body.appendChild(script);
     </script>
+
+    <!-- WebGL -->
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">New Unity Project111111</div>
+      </div>
+    </div>
+    
+    <!-- unitywebGL -->
+    <div style="border: solid 1px black; widows: 200px; height:30px; margin:auto; text-align:center" onclick="unityInstance.SendMessage('JavaScriptHook', 'TintRed')">RED</div>
+    <div style="border: solid 1px black; widows: 200px; height:30px; margin:auto; text-align:center" onclick="unityInstance.SendMessage('JavaScriptHook', 'TintGreen')">Green</div>
+    <div style="border: solid 1px black; widows: 200px; height:30px; margin:auto; text-align:center" onclick="unityInstance.SendMessage('JavaScriptHook', 'SetNumber', 55)">Number</div>
+    <div style="border: solid 1px black; widows: 200px; height:30px; margin:auto; text-align:center" onclick="unityInstance.SendMessage('JavaScriptHook', 'SetString','Hello')">String</div>
+    <div style="border: solid 1px black; widows: 200px; height:30px; margin:auto; text-align:center" onclick="unityInstance.SendMessage('JavaScriptHook', 'TestJson',jsonString)">jsonobject</div>
+    <div>
+      <input placeholder="Enter text..." id="htmlinput"><button onclick="sendBackMessage()">Send to Unity</button>
+    </div>
+    <div class="centered">
+      <h2>Message From Unity</h2>
+      <p id="lblMessage">......</p>
+    </div>
+    <script>
+      function sendBackMessage(){
+        var message = document.getElementById("htmlinput").value;
+        console.log("Sending messsage to Unity" + message);
+        unityInstance.SendMessage("Bridge", "SendToUnity", message);
+      }
+    </script>
+    <script>
+      var recaptureInputAndFocus = function(){
+        var canvas = document.getElementById("#canvas");
+        if(canvas){
+          canvas.setAttribute("tableindex","1");
+          canvas.focus();
+        }else
+        setTimeout(recaptureInputAndFocus,100);
+      }
+    </script>
+    <script>
+      function receiveMessageFromUnity(txt){
+        const lblMessage = document.getElementById("lblMessage");
+        lblMessage.innerText = txt;
+      }
+    </script>    
         
     </body>
 </html>
