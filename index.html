@@ -6,16 +6,18 @@
                 Git 소개 test
             </title>
             <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGL_JS04.json", {onProgress: UnityProgress});
-      // unitywebGL
-      var testObject ={name:'albert', age: 55}
-      var jsonString = JSON.stringify(testObject);
-      // unity webGL
-    </script>
+            <link rel="stylesheet" href="TemplateData/style.css">
+            <script src="TemplateData/UnityProgress.js"></script>
+            <script src="Build/UnityLoader.js"></script>
+
+            <script>
+            var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGL_JS04.json", {onProgress: UnityProgress});
+            // unitywebGL
+            var testObject ={name:'albert', age: 55}
+            var jsonString = JSON.stringify(testObject);
+            // unity webGL
+            </script>
+
     </head>
     <body>
         
