@@ -9,7 +9,7 @@
             <link rel="stylesheet" href="TemplateData/style.css">
             <script src="TemplateData/UnityProgress.js"></script>
             <script src="Build/UnityLoader.js"></script>
-
+        <!--- Change 
             <script>
             var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGL_JS04.json", {onProgress: UnityProgress});
             // unitywebGL
@@ -17,7 +17,10 @@
             var jsonString = JSON.stringify(testObject);
             // unity webGL
             </script>
-
+        -->
+            <script>
+            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webgl_simple.json", {onProgress: UnityProgress});
+            </script>
     </head>
     <body>
         
@@ -101,7 +104,7 @@
       document.body.appendChild(script);
     </script>   -->
 
-    <!-- WebGL -->
+    <!-- WebGL 
     <div class="webgl-content">
       <div id="unityContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
@@ -109,9 +112,9 @@
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
         <div class="title">New Unity Project111111</div>
       </div>
-    </div>
+    </div>-->
     
-    <!-- unitywebGL -->
+    <!-- unitywebGL 
     <div style="border: solid 1px black; widows: 200px; height:30px; margin:auto; text-align:center" onclick="unityInstance.SendMessage('JavaScriptHook', 'TintRed')">RED</div>
     <div style="border: solid 1px black; widows: 200px; height:30px; margin:auto; text-align:center" onclick="unityInstance.SendMessage('JavaScriptHook', 'TintGreen')">Green</div>
     <div style="border: solid 1px black; widows: 200px; height:30px; margin:auto; text-align:center" onclick="unityInstance.SendMessage('JavaScriptHook', 'SetNumber', 55)">Number</div>
@@ -146,7 +149,15 @@
         const lblMessage = document.getElementById("lblMessage");
         lblMessage.innerText = txt;
       }
-    </script>    
+    </script>  -->  
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">ks01</div>
+      </div>
+    </div>
         
     </body>
 </html>
