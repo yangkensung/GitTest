@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "New Unity Project111111",
+"productVersion": "0.1",
+"dataUrl": "WebGL_Test.data.unityweb",
+"wasmCodeUrl": "WebGL_Test.wasm.code.unityweb",
+"wasmFrameworkUrl": "WebGL_Test.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.3f1"
+}
