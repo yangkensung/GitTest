@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Test36005",
+"productVersion": "0.1",
+"dataUrl": "webgltest09.data.unityweb",
+"wasmCodeUrl": "webgltest09.wasm.code.unityweb",
+"wasmFrameworkUrl": "webgltest09.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.10f1"
+}
